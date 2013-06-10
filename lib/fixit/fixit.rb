@@ -17,6 +17,9 @@ class Fixit
   alias method_missing attribute
 
   class << self
+    FIXIT_FILE = 'spec/fixits.rb'
+    FIXIT_DIR  = 'spec/fixit'
+
     @@prepared = false
 
     def manage( klass, &block )
@@ -48,8 +51,8 @@ class Fixit
     end
 
     def prepare
-      require 'spec/fixit.rb' if File.exists? 'spec/fixit.rb'
-      Dir["spec/fixit/*.rb"].each {|f| require f }
+      require FIXIT_FILE  if File.exists? FIXIT_FILE 
+      Dir["#{FIXIT_DIR}/*.rb"].each {|f| require f }
       @@prepared = true
     end
 
