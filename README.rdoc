@@ -1,0 +1,13 @@
+= INSTALL
+
+ gem install fixit
+
+= Usage
+
+= DESCRIPTION
+
+ simple fixture
+ 
+= Further Reading
+
+ https://github.com/borot/fixit 

@@ -11,7 +11,7 @@ Also see http://borot.github.com/.
 EOF
 
   s.files           = Dir['{lib/**/*}'] +
-                        %w(fixit.gemspec Rakefile)
+                        %w(fixit.gemspec Rakefile README.rdoc)
   s.require_path    = 'lib'
 
   s.author          = 'Masato Ishimoto'
