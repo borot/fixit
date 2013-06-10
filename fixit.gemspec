@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name            = "fixit"
-  s.version         = "0.0.3"
+  s.version         = "0.0.4"
   s.platform        = Gem::Platform::RUBY
   s.summary         = "simple fixture for rspec"
   s.license         = "MIT"
