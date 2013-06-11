@@ -69,5 +69,5 @@ instead of Fixit.load.
  Fixit assumes that model classes
 
  * have accessor methods to each attributes(i.e; columns of record)
- * have save! method to insert new record
+ * have save! or save method to insert new record
  
