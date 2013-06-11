@@ -1,4 +1,4 @@
-# Fixit, a simple fixture for rspec
+# Fixit, a simple fixture for rspec and may be others
 
 ## What is it?
 
@@ -15,7 +15,7 @@
 ## How to use
 ####write fixture
 
-in \#spec/fixits.rb
+    #spec/fixits.rb
 
 	Fixit.manage User do
 	  assign :user1 do
@@ -39,8 +39,6 @@ in \#spec/fixits.rb
 	  end
 	end
 	
-or you can put separated files in spec/fixit/* . Files are automatically loaded.
-
 Of cource, you can add many records at once by like this.
 
     Fixit.manage User do
@@ -51,11 +49,22 @@ Of cource, you can add many records at once by like this.
         end
       end
     end
+
+And you can put it as separate files in other directory.
+
+Fixit automatically loads
+
+ * spec/fixits.rb
+ * spec/fixit/*.rb
+ * test/fixits.rb
+ * test/fixit/*.rb
+
+
+
 	
 ####load fixture
 
-\#spec/spec_helper.rb
-
+    #spec/spec_helper.rb
 	require 'fixit'	
 	Fixit.load
 	
