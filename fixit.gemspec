@@ -1,13 +1,13 @@
 Gem::Specification.new do |s|
   s.name            = "fixit"
-  s.version         = "0.0.4"
+  s.version         = "0.0.5"
   s.platform        = Gem::Platform::RUBY
   s.summary         = "simple fixture for rspec"
   s.license         = "MIT"
 
   s.description = <<-EOF
 Fixit provides a minimal interface for using fixuture.
-Also see https://github.com/borot .
+Also see https://github.com/borot/fixit .
 EOF
 
   s.files           = Dir['{lib/**/*}'] +
@@ -16,5 +16,5 @@ EOF
 
   s.author          = 'Masato Ishimoto'
   s.email           = 'masato.ishimoto@gmail.com'
-  s.homepage        = 'http://borot.github.com/'
+  s.homepage        = 'https://github.com/borot/fixit'
 end

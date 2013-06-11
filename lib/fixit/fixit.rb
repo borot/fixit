@@ -45,8 +45,14 @@ class Fixit
         candidate[:attributes].each do |attr, val|
           candidate[:obj].send("#{attr}=", val.is_a?(Proc) ? val.call : val) 
         end
-        assigneds[name] = candidate[:obj]
-        assigneds[name].save!
+
+        assigneds[name] = obj = candidate[:obj]
+
+        if obj.respond_to? :save!
+          obj.save!
+        elsif obj.respond_to? :save
+          obj.save
+        end
       end
     end
 
