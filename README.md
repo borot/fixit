@@ -40,6 +40,17 @@ in \#spec/fixits.rb
 	end
 	
 or you can put separated files in spec/fixit/* . Files are automatically loaded.
+
+Of cource, you can add many record by like this.
+
+    Fixit.manage User do
+      1000.times do |i|
+        assign "user#{i+1}".to_sym do
+          name  Faker::Name.name
+          email Faker::Internet.email   
+        end
+      end
+    end
 	
 ####load fixture
 
