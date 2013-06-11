@@ -41,7 +41,7 @@ in \#spec/fixits.rb
 	
 or you can put separated files in spec/fixit/* . Files are automatically loaded.
 
-Of cource, you can add many record by like this.
+Of cource, you can add many records at once by like this.
 
     Fixit.manage User do
       1000.times do |i|
