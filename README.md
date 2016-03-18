@@ -55,9 +55,9 @@ And you can put it as separate files in other directory.
 Fixture automatically loads
 
  * spec/fixtures.rb
- * spec/fixture/*.rb
+ * spec/fixtures/*.rb
  * test/fixtures.rb
- * test/fixture/*.rb
+ * test/fixtures/*.rb
 
 
 
