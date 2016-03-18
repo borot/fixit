@@ -18,7 +18,7 @@ class Fixture
 
   class << self
     FIXTURE_FILE = 'fixtures.rb'
-    FIXTURE_DIR  = 'fixture'
+    FIXTURE_DIR  = 'fixtures'
 
     @@prepared = false
 
