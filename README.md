@@ -1,4 +1,4 @@
-# Fixit, a simple fixture for rspec and may be others
+# Fixture, a simple fixture for rspec and others
 
 ## What is it?
 
@@ -10,14 +10,14 @@
 
 ## Installation
 
-    gem install fixit
+    gem install fixture
 
 ## How to use
 ####write fixture
 
-    #spec/fixits.rb
+    #spec/fixtures.rb
 
-	Fixit.manage User do
+	Fixture.manage User do
 	  assign :user1 do
 	    name 'Taro Yamada'
 		email { #this is a block }
@@ -31,17 +31,17 @@
 	  end
 	end
 	
-	Fixit.manage Post do
+	Fixture.manage Post do
 	  assign :post1 do
 	    title 'title1'
 		body '....'
-		user_id { Fixit.get(:user1).id }
+		user_id { Fixture.get(:user1).id }
 	  end
 	end
 	
 Of cource, you can add many records at once by like this.
 
-    Fixit.manage User do
+    Fixture.manage User do
       1000.times do |i|
         assign "user#{i+1}".to_sym do
           name  Faker::Name.name
@@ -52,12 +52,12 @@ Of cource, you can add many records at once by like this.
 
 And you can put it as separate files in other directory.
 
-Fixit automatically loads
+Fixture automatically loads
 
- * spec/fixits.rb
- * spec/fixit/*.rb
- * test/fixits.rb
- * test/fixit/*.rb
+ * spec/fixtures.rb
+ * spec/fixture/*.rb
+ * test/fixtures.rb
+ * test/fixture/*.rb
 
 
 
@@ -65,14 +65,14 @@ Fixit automatically loads
 ####load fixture
 
     #spec/spec_helper.rb
-	require 'fixit'	
-	Fixit.load
+	require 'fixture'	
+	Fixture.load
 	
 if you don't want to insert records but use model's instances, 
 
-    Fixit.prepare
+    Fixture.prepare
 
-instead of Fixit.load.
+instead of Fixture.load.
 
 
 ####use fixture
@@ -80,13 +80,13 @@ instead of Fixit.load.
 \#spec/models/user_spec.rb
 
 	describe User do
-	  let (:user) { Fixit.get(:user2) }
+	  let (:user) { Fixture.get(:user2) }
 	.....
 
    
 ##Assumption
 
- Fixit assumes that model classes
+ Fixture assumes that model classes
 
  * have accessor methods to each attributes(i.e; columns of record)
  * have save! or save method to insert new record

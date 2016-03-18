@@ -1,4 +1,4 @@
-class Fixit
+class Fixture
   def initialize(klass)
     @klass = klass
   end
@@ -17,8 +17,8 @@ class Fixit
   alias method_missing attribute
 
   class << self
-    FIXIT_FILE = 'fixits.rb'
-    FIXIT_DIR  = 'fixit'
+    FIXTURE_FILE = 'fixtures.rb'
+    FIXTURE_DIR  = 'fixture'
 
     @@prepared = false
 
@@ -58,8 +58,8 @@ class Fixit
 
     def prepare
       %w(spec test).each do |dir|
-        require "#{dir}/#{FIXIT_FILE}" if File.exists? "#{dir}/#{FIXIT_FILE}" 
-        Dir["#{dir}/#{FIXIT_DIR}/*.rb"].each {|f| require f }
+        require "#{dir}/#{FIXTURE_FILE}" if File.exists? "#{dir}/#{FIXTURE_FILE}" 
+        Dir["#{dir}/#{FIXTURE_DIR}/*.rb"].each {|f| require f }
       end
       @@prepared = true
     end
