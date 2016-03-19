@@ -41,7 +41,7 @@
 	
 Of cource, you can add many records at once by like this.
 
- * use faker
+#####use faker
 
     require 'faker'
     Fixture.manage User do
@@ -53,7 +53,7 @@ Of cource, you can add many records at once by like this.
       end
     end
 
- * use csv file
+#####use csv file
 
     require 'csv'
     Fixture.manage User do
