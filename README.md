@@ -42,6 +42,7 @@
 Of cource, you can add many records at once by like this.
 
  * use faker
+
     require 'faker'
     Fixture.manage User do
       1000.times do |i|
@@ -53,6 +54,7 @@ Of cource, you can add many records at once by like this.
     end
 
  * use csv file
+
     require 'csv'
     Fixture.manage User do
       CSV.read('path/to/data.csv').each.with_index(1) do |row, i|
