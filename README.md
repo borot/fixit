@@ -41,11 +41,24 @@
 	
 Of cource, you can add many records at once by like this.
 
+ * use faker
+    require 'faker'
     Fixture.manage User do
       1000.times do |i|
         assign "user#{i+1}".to_sym do
           name  Faker::Name.name
           email Faker::Internet.email   
+        end
+      end
+    end
+
+ * use csv file
+    require 'csv'
+    Fixture.manage User do
+      CSV.read('path/to/data.csv').each.with_index(1) do |row, i|
+        assign :"user#{i}" do
+          name row[0] 
+          email row[1]
         end
       end
     end
